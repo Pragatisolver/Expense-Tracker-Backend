@@ -1,27 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Register</title>
+    <meta charset="UTF-8" />
+    <title>Create Account</title>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f4f6f8;
+        font-family: Arial, sans-serif;
+      }
+
+      .register-box {
+        background: white;
+        padding: 30px;
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .register-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .register-box label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+      }
+
+      .register-box input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .register-box button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .register-box button:hover {
+        background: #0056b3;
+      }
+
+      .message {
+        margin-top: 10px;
+        text-align: center;
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <h2>Create Account</h2>
+    <div class="register-box">
+      <h2>Create Account</h2>
 
-    <form method="POST">
-      {% csrf_token %}
-      <label>Username:</label><br />
-      <input type="text" name="username" required /><br /><br />
+      <form method="POST">
+        {% csrf_token %}
 
-      <label>Email:</label><br />
-      <input type="email" name="email" /><br /><br />
+        <label>Username</label>
+        <input type="text" name="username" required />
 
-      <label>Password:</label><br />
-      <input type="password" name="password" required /><br /><br />
+        <label>Email</label>
+        <input type="email" name="email" />
 
-      <button type="submit">Register</button>
-    </form>
+        <label>Password</label>
+        <input type="password" name="password" required />
 
-    {% for message in messages %}
-    <p>{{ message }}</p>
-    {% endfor %}
+        <button type="submit">Register</button>
+      </form>
+
+      {% for message in messages %}
+      <div class="message">{{ message }}</div>
+      {% endfor %}
+    </div>
   </body>
 </html>
