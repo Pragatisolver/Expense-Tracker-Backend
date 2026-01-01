@@ -134,3 +134,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "/api/expenses/"
 LOGOUT_REDIRECT_URL = "/api-auth/login/"
+import os
+
+ALLOWED_HOSTS = ["*"]  # safe for demo projects
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
