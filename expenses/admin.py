@@ -9,4 +9,4 @@ class ExpenseAdmin(admin.ModelAdmin):
 
 admin.site.site_header = "Trackerrr Admin Page"
 admin.site.site_title = "Admin Page"
-admin.site.index_title = "Welcome to Trackerrr Admin"
+admin.site.index_title = "Welcome to Pragati’s Dashboard"
